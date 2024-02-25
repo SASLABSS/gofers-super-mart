@@ -1,6 +1,15 @@
 (function ($) {
 	"use strict";
-
+	const items = [
+		"20% off Entire Purchase Promo code: offT80",
+		"50% - 80% off on Vegetables",
+		"Off 10%! Shop Vegetables",
+		"Off 50%! Shop Now",
+		"Off 10%! Shop Vegetables",
+		"50% - 80% off on Vegetables",
+		"20% off Entire Purchase Promo code: offT30",
+		"Off 50%! Shop Now"
+	];
 	/* ..............................................
 	   Loader 
 	   ................................................. */
@@ -11,10 +20,20 @@
 			'overflow': 'visible'
 		});
 	});
+	var ul = document.querySelector(".offer-box");
 
+	// List your offers here
+
+	// Loop through the items and create li elements
+	items.forEach(function (itemText) {
+		var li = document.createElement("li");
+		li.innerHTML = '<i class="fab fa-opencart"></i> ' + itemText;
+		ul.appendChild(li);
+	});
 	/* ..............................................
 	   Fixed Menu
 	   ................................................. */
+
 
 	$(window).on('scroll', function () {
 		if ($(window).scrollTop() > 50) {
